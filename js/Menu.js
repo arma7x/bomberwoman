@@ -92,7 +92,7 @@ Menu = Class.extend({
 
         // singleplayer button
         var singleX = gGameEngine.size.w / 2 - modeSize - modesDistance + 80;
-        var singleBgGraphics = new createjs.Graphics().beginFill("rgba(0, 0, 0, 0.5)").drawRect(singleX, modesY, modeSize, modeSize * 2);
+        var singleBgGraphics = new createjs.Graphics().beginFill("rgba(0, 0, 0, 0)").drawRect(singleX, modesY, modeSize, modeSize * 2);
         var singleBg = new createjs.Shape(singleBgGraphics);
         gGameEngine.stage.addChild(singleBg);
         this.views.push(singleBg);
@@ -186,7 +186,7 @@ Menu = Class.extend({
 
         //
 
-        var singleTitle1 = new createjs.Text("Alternate character(boy) by", "16px Helvetica", "#ff4444");
+        var singleTitle1 = new createjs.Text("Boy Character by", "16px Helvetica", "#ff4444");
         var singleTitle2 = new createjs.Text(" sheep", "16px Helvetica", "#ffffff");
         var singleTitleWidth = singleTitle1.getMeasuredWidth() + singleTitle2.getMeasuredWidth();
         var modeTitlesY = modesY + modeSize - singleTitle1.getMeasuredHeight() + 55;
@@ -203,7 +203,7 @@ Menu = Class.extend({
 
         //
 
-        var singleTitle1 = new createjs.Text("Alternate character(girl) by", "16px Helvetica", "#ff4444");
+        var singleTitle1 = new createjs.Text("Girl character by", "16px Helvetica", "#ff4444");
         var singleTitle2 = new createjs.Text(" Radomir Dopieralski", "16px Helvetica", "#ffffff");
         var singleTitleWidth = singleTitle1.getMeasuredWidth() + singleTitle2.getMeasuredWidth();
         var modeTitlesY = modesY + modeSize - singleTitle1.getMeasuredHeight() + 75;
@@ -224,6 +224,40 @@ Menu = Class.extend({
         var singleTitle2 = new createjs.Text(" Adrian Gallant", "16px Helvetica", "#ffffff");
         var singleTitleWidth = singleTitle1.getMeasuredWidth() + singleTitle2.getMeasuredWidth();
         var modeTitlesY = modesY + modeSize - singleTitle1.getMeasuredHeight() + 95;
+
+        singleTitle1.x = singleX + (modeSize - singleTitleWidth) / 2;
+        singleTitle1.y = modeTitlesY;
+        gGameEngine.stage.addChild(singleTitle1);
+        this.views.push(singleTitle1)
+
+        singleTitle2.x = singleTitle1.x + singleTitle1.getMeasuredWidth();
+        singleTitle2.y = modeTitlesY;
+        gGameEngine.stage.addChild(singleTitle2);
+        this.views.push(singleTitle2)
+
+        //
+
+        var singleTitle1 = new createjs.Text("Thanks to", "16px Helvetica", "#ff4444");
+        var singleTitle2 = new createjs.Text(" MattSkala", "16px Helvetica", "#ffffff");
+        var singleTitleWidth = singleTitle1.getMeasuredWidth() + singleTitle2.getMeasuredWidth();
+        var modeTitlesY = modesY + modeSize - singleTitle1.getMeasuredHeight() + 115;
+
+        singleTitle1.x = singleX + (modeSize - singleTitleWidth) / 2;
+        singleTitle1.y = modeTitlesY;
+        gGameEngine.stage.addChild(singleTitle1);
+        this.views.push(singleTitle1)
+
+        singleTitle2.x = singleTitle1.x + singleTitle1.getMeasuredWidth();
+        singleTitle2.y = modeTitlesY;
+        gGameEngine.stage.addChild(singleTitle2);
+        this.views.push(singleTitle2)
+
+        //
+
+        var singleTitle1 = new createjs.Text("Code: ", "16px Helvetica", "#ff4444");
+        var singleTitle2 = new createjs.Text("github.com/arma7x/bomberwoman", "16px Helvetica", "#ffffff");
+        var singleTitleWidth = singleTitle1.getMeasuredWidth() + singleTitle2.getMeasuredWidth();
+        var modeTitlesY = modesY + modeSize - singleTitle1.getMeasuredHeight() + 135;
 
         singleTitle1.x = singleX + (modeSize - singleTitleWidth) / 2;
         singleTitle1.y = modeTitlesY;
