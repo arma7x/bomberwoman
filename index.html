@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BomberWoman</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+    <meta name="theme-color" content="transparent">
+    <script type="text/javascript" src="js/easeljs-0.8.1.min.js"></script>
+    <script type="text/javascript" src="js/preloadjs-0.6.1.min.js"></script>
+    <script type="text/javascript" src="js/soundjs-0.6.1.min.js"></script>
+    <script type="text/javascript" src="js/core.js"></script>
+    <script type="text/javascript" src="js/Utils.js"></script>
+    <script type="text/javascript" src="js/Entity.js"></script>
+    <script type="text/javascript" src="js/Player.js"></script>
+    <script type="text/javascript" src="js/Bot.js"></script>
+    <script type="text/javascript" src="js/Bonus.js"></script>
+    <script type="text/javascript" src="js/Tile.js"></script>
+    <script type="text/javascript" src="js/Fire.js"></script>
+    <script type="text/javascript" src="js/Bomb.js"></script>
+    <script type="text/javascript" src="js/Menu.js"></script>
+    <script type="text/javascript" src="js/InputEngine.js"></script>
+    <script type="text/javascript" src="js/GameEngine.js"></script>
+    <script src="/ads-sdk.v4.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body onload="gGameEngine.load()" style="overflow:hidden;margin:0px;padding:0px;background-color:#382519;">
+    <div style="overflow:hidden;">
+        <div id="game" style="overflow:hidden;">
+          <canvas id="canvas" width="545" height="460" style="padding: 0px !important;margin: 0px !important;transform: scale(0.7);transform-origin: -2% -5%;"></canvas>
+        </div>
+    </div>
+    <script>
+      function displayKaiAds() {
+        var display = true;
+        if (window['kaiadstimer'] == null) {
+          window['kaiadstimer'] = new Date();
+        } else {
+          var now = new Date();
+          if ((now - window['kaiadstimer']) < 300000) {
+            display = false;
+          } else {
+            window['kaiadstimer'] = now;
+          }
+        }
+        console.log('Display Ads:', display);
+        if (!display)
+          return;
+        getKaiAd({
+          publisher: 'ac3140f7-08d6-46d9-aa6f-d861720fba66',
+          app: 'bomber-woman',
+          slot: 'kaios',
+          onerror: err => console.error(err),
+          onready: ad => {
+            ad.call('display')
+            setTimeout(() => {
+              document.body.style.position = '';
+            }, 1000);
+          }
+        })
+      }
+
+      // listener
+      window.addEventListener('load', function () {
+
+        displayKaiAds();
+
+        document.addEventListener('visibilitychange', function(ev) {
+          if (document.visibilityState === 'visible') {
+            displayKaiAds();
+          }
+        });
+
+      }, false);
+    </script>
+</body>
+</html>

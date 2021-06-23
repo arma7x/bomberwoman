@@ -1,0 +1,36 @@
+{
+  "version": "1.0.0",
+  "name": "BomberWoman",
+  "description": "BomberWoman is a remake of a classic game known as Bomberman. Play against the AI bots & defeat all of them to win",
+  "launch_path": "/index.html",
+  "theme": "#873eff",
+  "theme_color": "#873eff",
+  "background_color": "#873eff",
+  "fullscreen": "true",
+  "chrome": {
+    "statusbar": "overlap"
+  },
+  "categories": [
+    "games"
+  ],
+  "icons": {
+    "56": "/icons/icon56x56.png",
+    "112": "/icons/icon112x112.png"
+  },
+  "developer": {
+    "name": "arma7x",
+    "url": "https://github.com/arma7x"
+  },
+  "origin": "app://bomber-woman.arma7x.com",
+  "type": "web",
+  "permissions": {},
+  "messages": [],
+  "locales": {
+    "en-US": {
+      "name": "BomberWoman",
+      "subtitle": "BomberWoman is a remake of a classic game known as Bomberman. Play against the AI bots & defeat all of them to win",
+      "description": "BomberWoman is a remake of a classic game known as Bomberman. Play against the AI bots & defeat all of them to win"
+    }
+  },
+  "default_locale": "en-US"
+}
