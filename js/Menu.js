@@ -104,6 +104,23 @@ Menu = Class.extend({
         var singleTitle1 = new createjs.Text("Press 1", "16px Helvetica", "#ff4444");
         var singleTitle2 = new createjs.Text(" to Start", "16px Helvetica", "#ffffff");
         var singleTitleWidth = singleTitle1.getMeasuredWidth() + singleTitle2.getMeasuredWidth();
+        var modeTitlesY = modesY + modeSize - singleTitle1.getMeasuredHeight() - 70;
+
+        singleTitle1.x = singleX + (modeSize - singleTitleWidth) / 2;
+        singleTitle1.y = modeTitlesY;
+        gGameEngine.stage.addChild(singleTitle1);
+        this.views.push(singleTitle1)
+
+        singleTitle2.x = singleTitle1.x + singleTitle1.getMeasuredWidth();
+        singleTitle2.y = modeTitlesY;
+        gGameEngine.stage.addChild(singleTitle2);
+        this.views.push(singleTitle2)
+
+        //
+
+        var singleTitle1 = new createjs.Text("Press 0", "16px Helvetica", "#ff4444");
+        var singleTitle2 = new createjs.Text(" to Exit", "16px Helvetica", "#ffffff");
+        var singleTitleWidth = singleTitle1.getMeasuredWidth() + singleTitle2.getMeasuredWidth();
         var modeTitlesY = modesY + modeSize - singleTitle1.getMeasuredHeight() - 50;
 
         singleTitle1.x = singleX + (modeSize - singleTitleWidth) / 2;
@@ -274,7 +291,7 @@ Menu = Class.extend({
         var singleIcon = new createjs.Bitmap("img/betty.png");
         singleIcon.sourceRect = new createjs.Rectangle(0, 0, 48, 48);
         singleIcon.x = singleX + (modeSize - 48) / 2;
-        singleIcon.y = iconsY;
+        singleIcon.y = iconsY - 20;
         gGameEngine.stage.addChild(singleIcon);
         this.views.push(singleIcon);
 
